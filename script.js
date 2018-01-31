@@ -11,10 +11,14 @@ function startGame(){
   while (HP > 0){
     var damage = getRandomInt(3);
     HP -= damage;
-    console.log(`Grant attacks and does ${damage} damage, ${username} HP is at ${HP}`)
+    console.log(`Grant attacks and does ${damage} damage, ${username} HP is at ${HP}`);
+    if (HP <= 0){
+      console.log('GRANT HAS DEFEATED YOU!');
+      break;
+    } 
     damage = getRandomInt(3);
     xHP -= damage;
-    console.log(`${username} attacks grant, it does ${damage} damage, his HP is at ${xHP}`)
+    console.log(`${username} attacks Grant, it does ${damage} damage, his HP is at ${xHP}`);
     if (xHP <= 0 && xlives === 0){
       console.log('YOU HAVE DEFEATED GRANT!');
       break;
@@ -24,7 +28,6 @@ function startGame(){
       xHP = 10;
       console.log('GRANT HAS HEALED HIMSELF!');
     } 
-    
     
   }
   console.log('GAME OVER')
